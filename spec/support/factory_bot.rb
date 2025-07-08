@@ -14,20 +14,4 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
-  # Reload factories to ensure fresh state
-  config.before(:suite) do
-    FactoryBot.find_definitions
-    FactoryBot.reload
-  end
-
-  # Lint factories before running tests
-  config.before(:suite) do
-    begin
-      FactoryBot.lint
-    rescue => e
-      puts "Error during factory linting: #{e.message}"
-      exit 1
-    end
-  end
 end
