@@ -1,7 +1,7 @@
 require_relative "boot"
 
 require "rails"
-# Pick the frameworks you want:
+# Escolha os frameworks que deseja usar:
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
@@ -12,31 +12,29 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "rails/test_unit/railtie"
+# require "rails/test_unit/railtie" # Descomente se usar testes com TestUnit
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+# Carrega as gems do Gemfile conforme o grupo de ambiente
 Bundler.require(*Rails.groups)
 
 module EcommerceInvenio
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+    # Inicializa as configurações padrão para a versão do Rails usada
     config.load_defaults 8.0
 
-    # Please, add to the `ignore` list any other `lib` subdirectories that do
-    # not contain `.rb` files, or that should not be reloaded or eager loaded.
-    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    # Configurações de internacionalização
+    config.i18n.default_locale = :'pt-BR'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
+    # Ignora pastas específicas dentro de lib para autoload/eager_load
     config.autoload_lib(ignore: %w[assets tasks])
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
+    # Configurações adicionais podem ser feitas aqui ou nos arquivos de ambiente
+    # Exemplo:
+    # config.time_zone = "Brasilia"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate system test files.
+    # Não gera arquivos de teste de sistema automaticamente
     config.generators.system_tests = nil
   end
 end

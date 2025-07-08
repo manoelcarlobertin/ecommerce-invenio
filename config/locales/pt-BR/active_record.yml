@@ -1,0 +1,62 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validação falhou: %{errors}'
+        restrict_dependent_destroy:
+          has_one: 'Não é possível excluir o registro pois existe um(a) %{record} dependente'
+          has_many: 'Não é possível excluir o registro pois existem %{record} dependentes'
+        blank: 'não pode ficar em branco'
+        taken: 'já está em uso'
+        too_long: 'é muito longo (máximo: %{count} caracteres)'
+        too_short: 'é muito curto (mínimo: %{count} caracteres)'
+        invalid: 'não é válido'
+        not_a_number: 'não é um número'
+        greater_than: 'deve ser maior que %{count}'
+        less_than: 'deve ser menor que %{count}'
+        confirmation: 'não é igual à confirmação'
+        not_found: 'não encontrado'
+
+    models:
+      user: 'Usuário'
+      product: 'Produto'
+      category: 'Categoria'
+      order: 'Pedido'
+      address: 'Endereço'
+
+    attributes:
+      user:
+        name: 'Nome'
+        email: 'E-mail'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+        current_password: 'Senha atual'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+
+      product:
+        name: 'Nome'
+        description: 'Descrição'
+        price: 'Preço'
+        stock: 'Estoque'
+        category: 'Categoria'
+        active: 'Ativo'
+
+      category:
+        name: 'Nome'
+        description: 'Descrição'
+
+      order:
+        total: 'Total'
+        status: 'Status'
+        payment_method: 'Método de pagamento'
+        shipping_address: 'Endereço de entrega'
+
+      address:
+        street: 'Rua'
+        number: 'Número'
+        complement: 'Complemento'
+        neighborhood: 'Bairro'
+        city: 'Cidade'
+        state: 'Estado'
+        zip_code: 'CEP'
