@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  # validate_presence_of :name
+  validates :name, presence: true
 end
