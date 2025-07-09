@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  # associations
   belongs_to :productable, polymorphic: true
 
   # validations
