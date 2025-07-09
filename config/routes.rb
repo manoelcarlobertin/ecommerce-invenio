@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :games
   resources :products
   get "home/index"
   get "system_requirements/index"
