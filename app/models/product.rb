@@ -4,5 +4,6 @@ class Product < ApplicationRecord
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
-  validates :price, numericality: { greater_than: 0 }
+  validates :price, presence: true
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
