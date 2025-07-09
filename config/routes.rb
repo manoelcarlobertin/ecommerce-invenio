@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :system_requirements
   # Defines the root path route ("/")
   # root "posts#index"
 

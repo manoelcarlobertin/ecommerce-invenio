@@ -1,0 +1,47 @@
+<%= form_with(model: system_requirement, class: "contents") do |form| %>
+  <% if system_requirement.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(system_requirement.errors.count, "error") %> prohibited this system_requirement from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% system_requirement.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": system_requirement.errors[:name].none?, "border-red-400 focus:outline-red-600": system_requirement.errors[:name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :operational_system %>
+    <%= form.text_field :operational_system, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": system_requirement.errors[:operational_system].none?, "border-red-400 focus:outline-red-600": system_requirement.errors[:operational_system].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :sotorage %>
+    <%= form.text_field :sotorage, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": system_requirement.errors[:sotorage].none?, "border-red-400 focus:outline-red-600": system_requirement.errors[:sotorage].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :processor %>
+    <%= form.text_field :processor, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": system_requirement.errors[:processor].none?, "border-red-400 focus:outline-red-600": system_requirement.errors[:processor].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :memory %>
+    <%= form.text_field :memory, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": system_requirement.errors[:memory].none?, "border-red-400 focus:outline-red-600": system_requirement.errors[:memory].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :video_board %>
+    <%= form.text_field :video_board, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": system_requirement.errors[:video_board].none?, "border-red-400 focus:outline-red-600": system_requirement.errors[:video_board].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
