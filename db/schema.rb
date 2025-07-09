@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_09_014452) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_09_024505) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -18,14 +18,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_09_014452) do
   end
 
   create_table "system_requirements", force: :cascade do |t|
-    t.string "name"
-    t.string "operational_system"
-    t.string "sotorage"
-    t.string "processor"
-    t.string "memory"
-    t.string "video_board"
+    t.string "name", null: false
+    t.string "operational_system", null: false
+    t.string "storage", null: false
+    t.string "processor", null: false
+    t.string "memory", null: false
+    t.string "video_board", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_system_requirements_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
