@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get "system_requirements/index"
+  get "system_requirements/show"
+  get "system_requirements/new"
+  get "system_requirements/edit"
   # Defines the root path route ("/")
   # root "posts#index"
-
+  resources :system_requirements
   resources :categories
   devise_for :users
 

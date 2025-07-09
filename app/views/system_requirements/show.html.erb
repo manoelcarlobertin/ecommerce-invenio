@@ -1,0 +1,27 @@
+<div class="max-w-lg mx-auto bg-white p-6 rounded shadow">
+  <h1 class="text-2xl font-bold mb-4">
+    <%= @system_requirement.name %>
+  </h1>
+
+  <p><strong class="font-semibold">Sistema Operacional:</strong>
+    <%= @system_requirement.operational_system %>
+  </p>
+  <p><strong class="font-semibold">Armazenamento:</strong>
+    <%= @system_requirement.storage %>
+  </p>
+  <p><strong class="font-semibold">Processador:</strong>
+    <%= @system_requirement.processor %>
+  </p>
+  <p><strong class="font-semibold">Memória:</strong>
+    <%= @system_requirement.memory %>
+  </p>
+  <p><strong class="font-semibold">Placa de Vídeo:</strong>
+    <%= @system_requirement.video_board %>
+  </p>
+
+  <div class="mt-6">
+    <%= link_to 'Editar', edit_system_requirement_path(@system_requirement),
+      class: "text-yellow-600 hover:underline mr-4" %>
+    <%= link_to 'Voltar', system_requirements_path, class: "text-blue-600 hover:underline" %>
+  </div>
+</div>

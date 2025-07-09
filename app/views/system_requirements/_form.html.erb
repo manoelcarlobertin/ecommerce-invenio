@@ -1,0 +1,50 @@
+<%= form_with(model: @system_requirement, local: true) do |form| %>
+  <% if @system_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@system_requirement.errors.count, "erro" ) %> proibiu este requisito de ser salvo:
+      </h2>
+      <ul>
+        <% @system_requirement.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :operational_system %><br>
+    <%= form.text_field :operational_system %>
+  </div>
+
+  <div>
+    <%= form.label :storage %><br>
+    <%= form.text_field :storage %>
+  </div>
+
+  <div>
+    <%= form.label :processor %><br>
+    <%= form.text_field :processor %>
+  </div>
+
+  <div>
+    <%= form.label :memory %><br>
+    <%= form.text_field :memory %>
+  </div>
+
+  <div>
+    <%= form.label :video_board %><br>
+    <%= form.text_field :video_board %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

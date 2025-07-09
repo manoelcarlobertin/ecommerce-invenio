@@ -1,0 +1,7 @@
+<h1 class="text-3xl font-bold mb-6">
+  <%= action_name.capitalize %> Requisito do Sistema
+</h1>
+
+<%= render 'form', system_requirement: @system_requirement %>
+
+<%= link_to 'Voltar', system_requirements_path, class: "inline-block mt-4 text-blue-600 hover:underline" %>
