@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_09_222803) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_09_232614) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,6 +43,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_09_222803) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "mode"
+    t.datetime "release_date"
+    t.string "developer"
+    t.integer "system_requirement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["system_requirement_id"], name: "index_games_on_system_requirement_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -85,4 +95,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_09_222803) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "games", "system_requirements"
 end
